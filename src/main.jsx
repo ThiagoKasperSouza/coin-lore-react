@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router';
 import './index.css'
 import App from './App.jsx'
 import Home from './pages/home/Home.jsx'
-import About from './pages/about/About.jsx'
+import CoinMarkets from './pages/markets/Markets.jsx'
 
 // 1. Defina suas rotas em formato de objeto
 const router = createBrowserRouter([
@@ -13,7 +13,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "about", element: <About /> },
+      { path: "markets", element: <CoinMarkets /> },
+      { path: "markets/:id", element: <CoinMarkets /> },
     ],
   },
 ]);
