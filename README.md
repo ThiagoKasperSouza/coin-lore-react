@@ -1,4 +1,4 @@
-# React + Vite - Criptolore API
+# React + Vite - Coinlore API
 
 ![app](image.png)
 
