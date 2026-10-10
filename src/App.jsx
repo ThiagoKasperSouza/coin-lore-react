@@ -7,7 +7,9 @@ function App() {
     <>
      <div>
       <nav>
-        <Link to="/">Home</Link> | <Link to="/markets">Markets</Link>
+        <Link to="/">Home</Link> | 
+        <Link to="/markets">Markets</Link> |
+        <Link to="/exchanges">Exchanges</Link>
       </nav>
 
       <hr />

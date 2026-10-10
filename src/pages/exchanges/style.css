@@ -1,0 +1,100 @@
+.exchange-search-form {
+  background-color: #1e293b;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.input-group label {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.input-group input {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #0f172a;
+  color: #fff;
+  font-size: 1rem;
+  width: 150px;
+}
+
+.search-btn {
+  background-color: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #0ea5e9;
+}
+
+.exchange-card {
+  background-color: #1e293b;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.exchange-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.exchange-card-header h2 {
+  margin: 0;
+  color: #38bdf8;
+}
+
+.exchange-link {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.exchange-link:hover {
+  text-decoration: underline;
+}
+
+.exchange-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-box {
+  background-color: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f8fafc;
+}

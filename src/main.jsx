@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import Home from './pages/home/Home.jsx'
 import CoinMarkets from './pages/markets/Markets.jsx'
+import ExchangeDetails from './pages/exchanges/ExchangeDetails.jsx'
 
 // 1. Defina suas rotas em formato de objeto
 const router = createBrowserRouter([
@@ -15,6 +16,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "markets", element: <CoinMarkets /> },
       { path: "markets/:id", element: <CoinMarkets /> },
+      { path: "exchanges", element: <ExchangeDetails /> },
+      { path: "exchanges/:id", element: <ExchangeDetails /> }
     ],
   },
 ]);

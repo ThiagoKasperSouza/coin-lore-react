@@ -11,6 +11,7 @@ export default function CoinMarkets() {
   const [markets, setMarkets] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Função para buscar os mercados da moeda escolhida
   const fetchMarkets = async (targetId) => {
@@ -59,6 +60,13 @@ export default function CoinMarkets() {
     fetchMarkets(coinId);
   };
 
+  const filteredMarkets = markets.filter(market => {
+    const term = searchTerm.toLowerCase();
+    return market.name && market.name.toLowerCase().includes(term) || 
+           market.base && market.base.toLowerCase().includes(term) || 
+           market.quote && market.quote.toLowerCase().includes(term);
+  });
+
   return (
     <div className="crypto-container">
       <header className="crypto-header">
@@ -91,6 +99,23 @@ export default function CoinMarkets() {
 
       {!loading && !error && (
         <div className="table-wrapper">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '10px' }}>
+                {/* Input de Filtro */}
+                    <input
+                        type="text"
+                        placeholder="Filtrar par (ex: Binance,Coinbase)..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{
+                        padding: '8px 12px',
+                        borderRadius: '6px',
+                        border: '1px solid #334155',
+                        backgroundColor: '#0f172a',
+                        color: '#fff',
+                        width: '300px'
+                        }}
+                    />
+            </div>
           <table className="crypto-table">
             <thead>
               <tr>
@@ -101,8 +126,8 @@ export default function CoinMarkets() {
               </tr>
             </thead>
             <tbody>
-              {Array.isArray(markets) && markets.length > 0 ? (
-                markets.map((market, index) => (
+              {Array.isArray(filteredMarkets) && filteredMarkets.length > 0 ? (
+                filteredMarkets.map((market, index) => (
                   <tr key={index}>
                     <td><strong>{market.name}</strong></td>
                     <td><span className="badge">{market.base}/{market.quote}</span></td>
